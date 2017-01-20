@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
+	<style type="text/css">
+		body {
+			background-image: url("Balls_Baby.jpg");
+			}
+		#Click {height: 100px;
+				width: 100px;
+				background: blue;
+				border-style: dotted;
+				color:orange;
+				margin-top: 280px;
+				font-family: 'Playball', cursive;
+				font-size:25px;
+				font-weight: bold;
+
+		}
+		#ball {
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			position: absolute;
+			background: orange;
+		}
+		
+		
+	</style>
+</head>
+<body>
+
+<div >
+<div id="ball"></div>
+</div>
+
+
+<button id="Click" onclick="Move()">Bounce!</button>
+
+
+	<script type="text/javascript">
+
+	function Move() {
+
+		var elem = document.getElementById("ball");
+		var	pos = 0;
+		var id = setInterval(frame, 3);
+		function frame() {
+		
+		if (pos == 550) {
+			clearInterval(id)
+			pos++
+			elem.style.top = pos + 'px';
+			elem.style.left = pos + 'px';
+			
+
+		} else {
+			pos++;
+			elem.style.top = pos + 'px';
+			elem.style.left = pos + 'px';
+			
+		//to get ball to go back up (i.e. bounce)is the command going to be "clear"interval? how do we get it to repeat?
+		}
+	}
+}
+
+function Move2() {
+
+		var elem = document.getElementById("ball");
+		var	pos = 550;
+		var id = setInterval(frame, 3);
+		function frame2() {
+		
+		if (pos == 0) {
+			clearInterval(id)
+			pos++
+			elem.style.bottom = pos + 'px';
+			elem.style.left = pos + 'px';
+			
+
+		} else {
+			pos--;
+			elem.style.bottom = pos + 'px';
+			elem.style.left = pos + 'px';
+			
+		//to get ball to go back up (i.e. bounce)is the command gooing to be "clear"interval? how do we get it to repeat?
+		} 
+	}
+		
+}
+		
+
+	</script>
+</body>
+</html>
